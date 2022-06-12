@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
-
     *,
     *::before,
     ::after {
@@ -67,10 +65,34 @@ export const GlobalStyle = createGlobalStyle`
         margin-top: 12vh;
     }
 
+    .active,
+    .isActive {
+        position: relative;
+    }
+
+    .active::after,
+    .isActive::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 0.165rem;
+      background: var(--clr-primary-dark);
+    }
+    
+    .active::after {
+      bottom: -0.85rem;
+
+    }
+
+    .isActive::after {
+      bottom: -0.45rem;
+    }
+
     @media screen and (min-width: 768px) {
     section,
         main {
-                margin-top: 20vh;
+             margin-top: 20vh;
         }
     }
 `;
