@@ -37,11 +37,9 @@ const Navbar: React.FunctionComponent<INavbarProps> = () => {
                 Lookbook
               </NavLink>
             </NavLinks>
-            <div className='logo'>
-              <Link to='/'>
-                <Logo />
-              </Link>
-            </div>
+            <Link to='/'>
+              <Logo />
+            </Link>
             <NavLinks>
               <NavLink
                 className={({ isActive }) => (isActive ? 'isActive' : '')}
