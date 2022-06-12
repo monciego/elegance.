@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { IconContext } from 'react-icons';
 import { FiMenu } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/Logo.svg';
 import './navbar.styles.css';
 
@@ -18,8 +18,18 @@ const Navbar: React.FunctionComponent<INavbarProps> = () => {
         <nav className='navbar'>
           <div className='nav-top'>
             <div className='nav-links'>
-              <Link to='/about'>About</Link>
-              <Link to='/lookbook'>Lookbook</Link>
+              <NavLink
+                className={({ isActive }) => (isActive ? 'isActive' : '')}
+                to='/about'
+              >
+                About
+              </NavLink>
+              <NavLink
+                className={({ isActive }) => (isActive ? 'isActive' : '')}
+                to='/lookbook'
+              >
+                Lookbook
+              </NavLink>
             </div>
             <div className='logo'>
               <Link to='/'>
@@ -27,8 +37,18 @@ const Navbar: React.FunctionComponent<INavbarProps> = () => {
               </Link>
             </div>
             <div className='nav-links'>
-              <Link to='/explore'>Explore</Link>
-              <Link to='/contact'>Contact</Link>
+              <NavLink
+                className={({ isActive }) => (isActive ? 'isActive' : '')}
+                to='/explore'
+              >
+                Explore
+              </NavLink>
+              <NavLink
+                className={({ isActive }) => (isActive ? 'isActive' : '')}
+                to='/contact'
+              >
+                Contact
+              </NavLink>
             </div>
             <div className='nav-icon'>
               <FiMenu />
@@ -37,22 +57,45 @@ const Navbar: React.FunctionComponent<INavbarProps> = () => {
           <div className='nav-bottom'>
             <ul className='nav-links'>
               <li>
-                <Link className='active' to='/'>
+                <NavLink
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                  to='/'
+                >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link to='/services'>Services</Link>
+                <NavLink
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                  to='/services'
+                >
+                  Services
+                </NavLink>
               </li>
               <li>
-                <Link to='/projects'>Projects</Link>
+                <NavLink
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                  to='/projects'
+                >
+                  Projects
+                </NavLink>
               </li>
 
               <li>
-                <Link to='/architects'>Architects</Link>
+                <NavLink
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                  to='/architects'
+                >
+                  Architects
+                </NavLink>
               </li>
               <li>
-                <Link to='/news'>News</Link>
+                <NavLink
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                  to='/news'
+                >
+                  News
+                </NavLink>
               </li>
             </ul>
           </div>
