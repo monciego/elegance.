@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { IconContext } from 'react-icons';
 import { FiMenu } from 'react-icons/fi';
 import { Link, NavLink } from 'react-router-dom';
-import { ReactComponent as Logo } from '../assets/Logo.svg';
+import Logo from './Logo';
 import {
   NavBottom,
   NavIcon,
