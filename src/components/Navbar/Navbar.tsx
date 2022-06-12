@@ -1,10 +1,13 @@
 import { Fragment } from 'react';
 import { IconContext } from 'react-icons';
 import { FiMenu } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/Logo.svg';
 import './navbar.styles.css';
 
-const Navbar: React.FC = () => {
+export interface INavbarProps {}
+
+const Navbar: React.FunctionComponent<INavbarProps> = () => {
   return (
     <Fragment>
       <IconContext.Provider
@@ -15,17 +18,17 @@ const Navbar: React.FC = () => {
         <nav className='navbar'>
           <div className='nav-top'>
             <div className='nav-links'>
-              <a href='/about'>About</a>
-              <a href='/lookbook'>Lookbook</a>
+              <Link to='/about'>About</Link>
+              <Link to='/lookbook'>Lookbook</Link>
             </div>
             <div className='logo'>
-              <a href='/'>
+              <Link to='/'>
                 <Logo />
-              </a>
+              </Link>
             </div>
             <div className='nav-links'>
-              <a href='/explore'>Explore</a>
-              <a href='/contact'>Contact</a>
+              <Link to='/explore'>Explore</Link>
+              <Link to='/contact'>Contact</Link>
             </div>
             <div className='nav-icon'>
               <FiMenu />
@@ -34,22 +37,22 @@ const Navbar: React.FC = () => {
           <div className='nav-bottom'>
             <ul className='nav-links'>
               <li>
-                <a href='/projects' className='active'>
+                <Link className='active' to='/'>
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href='/services'>Services</a>
+                <Link to='/services'>Services</Link>
               </li>
               <li>
-                <a href='/projects'>Projects</a>
+                <Link to='/projects'>Projects</Link>
               </li>
 
               <li>
-                <a href='/architects'>Architects</a>
+                <Link to='/architects'>Architects</Link>
               </li>
               <li>
-                <a href='/news'>News</a>
+                <Link to='/news'>News</Link>
               </li>
             </ul>
           </div>
