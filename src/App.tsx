@@ -11,7 +11,7 @@ import Lookbook from './pages/Lookbook';
 import Explore from './pages/Explore';
 import Contact from './pages/Contact';
 
-function App() {
+const App: React.FunctionComponent = () => {
   return (
     <Fragment>
       <div className='container'>
@@ -30,6 +30,6 @@ function App() {
       </div>
     </Fragment>
   );
-}
+};
 
 export default App;
