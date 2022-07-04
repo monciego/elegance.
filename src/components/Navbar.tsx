@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { IconContext } from 'react-icons';
 import { FiMenu } from 'react-icons/fi';
 import { Link, NavLink } from 'react-router-dom';
@@ -10,10 +10,17 @@ import {
   NavTop,
   StyledNavbar,
 } from '../styles/navbar.styled';
+import { MobileNavbar } from './MobileNavbar';
 
 export interface INavbarProps {}
 
 const Navbar: React.FunctionComponent<INavbarProps> = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = (): void => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
     <Fragment>
       <IconContext.Provider
@@ -21,6 +28,7 @@ const Navbar: React.FunctionComponent<INavbarProps> = () => {
           style: { cursor: 'pointer', height: '1.75rem', width: '1.75rem' },
         }}
       >
+        <MobileNavbar isOpen={isOpen} handleToggle={handleToggle} />
         <StyledNavbar>
           <NavTop>
             <NavLinks>
@@ -55,7 +63,7 @@ const Navbar: React.FunctionComponent<INavbarProps> = () => {
               </NavLink>
             </NavLinks>
             <NavIcon>
-              <FiMenu />
+              <FiMenu onClick={handleToggle} />
             </NavIcon>
           </NavTop>
           <NavBottom>
